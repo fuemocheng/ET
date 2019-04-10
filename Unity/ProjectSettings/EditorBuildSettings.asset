@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Landlords/Scene/LandlordMain.unity
+    guid: b76413cdb75c5c147b1cc2d131254f49
+  - enabled: 1
     path: Assets/Scenes/Init.unity
     guid: e0d691ac8c1d0454ba07089ea820e18a
   - enabled: 1

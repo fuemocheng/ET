@@ -10,7 +10,7 @@ namespace ETHotfix
 	{
 		public override void Awake(UIComponent self)
 		{
-			self.Camera = Component.Global.transform.Find("UICamera").gameObject;
+            self.Awake();
 		}
 	}
 	
@@ -19,16 +19,18 @@ namespace ETHotfix
 	/// </summary>
 	public class UIComponent: Component
 	{
-		public GameObject Camera;
+		public GameObject Root;
 		
 		public Dictionary<string, UI> uis = new Dictionary<string, UI>();
 
+        public void Awake()
+        {
+            this.Root = Component.Global.transform.Find("UI").gameObject;
+        }
+
 		public void Add(UI ui)
 		{
-			ui.GameObject.GetComponent<Canvas>().worldCamera = this.Camera.GetComponent<Camera>();
-			
 			this.uis.Add(ui.Name, ui);
-			ui.Parent = this;
 		}
 
 		public void Remove(string name)

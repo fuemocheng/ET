@@ -176,7 +176,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &82407470
 GameObject:
@@ -353,12 +353,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data:
-  - key: LobbyCanvas
-    gameObject: {fileID: 0}
   - key: LoginCanvas
-    gameObject: {fileID: 0}
+    gameObject: {fileID: 1815628144}
+  - key: LobbyCanvas
+    gameObject: {fileID: 1027366737}
   - key: RoomCanvas
-    gameObject: {fileID: 0}
+    gameObject: {fileID: 242953732}
 --- !u!1 &489851532
 GameObject:
   m_ObjectHideFlags: 0
@@ -687,7 +687,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 502d8cafd6a5a0447ab1db9a24cdcb10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: []
+  data:
+  - key: Unit
+    gameObject: {fileID: 82407470}
 --- !u!4 &1409139679
 Transform:
   m_ObjectHideFlags: 0
@@ -704,7 +706,7 @@ Transform:
   - {fileID: 82407471}
   - {fileID: 1912820239}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1409139680
 MonoBehaviour:

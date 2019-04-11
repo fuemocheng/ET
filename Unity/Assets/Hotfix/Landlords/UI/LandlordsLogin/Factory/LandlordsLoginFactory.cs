@@ -4,16 +4,27 @@ using UnityEngine;
 
 namespace ETHotfix
 {
-    public class LandlordsLoginFactory : IUIFactory
+    public static class LandlordsLoginFactory
     {
-        UI IUIFactory.Create(Scene scene, string type, GameObject parent)
+        public static UI Create()
         {
-            throw new NotImplementedException();
-        }
+            try
+            {
+                ResourcesComponent resourcesComponent = ETModel.Game.Scene.GetComponent<ResourcesComponent>();
+                resourcesComponent.LoadBundle(UIType.LandlordsLogin.StringToAB());
+                GameObject bundleGameObject = (GameObject)resourcesComponent.GetAsset(UIType.LandlordsLogin.StringToAB(), UIType.LandlordsLogin);
+                GameObject gameObject = UnityEngine.Object.Instantiate(bundleGameObject);
 
-        void IUIFactory.Remove(string type)
-        {
-            throw new NotImplementedException();
+                UI ui = ComponentFactory.Create<UI, string, GameObject>(UIType.LandlordsLogin, gameObject, false);
+
+                ui.AddComponent<LandlordsLoginComponent>();
+                return ui;
+            }
+            catch (Exception e)
+            {
+                Log.Error(e);
+                return null;
+            }
         }
     }
 }
